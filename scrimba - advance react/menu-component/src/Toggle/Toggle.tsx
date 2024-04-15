@@ -1,9 +1,21 @@
-import { createContext, useState, ReactNode } from "react";
+import { createContext, useState, ReactNode, useEffect } from "react";
 
 const ToggleContext = createContext({ on: true, toggle: () => {} });
 
-export default function Toggle({ children }: { children: ReactNode }) {
+export default function Toggle({
+  children,
+  onToggle,
+}: {
+  children: ReactNode;
+  onToggle?: () => void;
+}) {
   const [on, setOn] = useState(false);
+
+  useEffect(() => {
+    if (onToggle) {
+      onToggle();
+    }
+  }, [on, onToggle]);
 
   function toggle() {
     setOn((prevOn) => !prevOn);
