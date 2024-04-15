@@ -1,5 +1,10 @@
+import ToggleButton from "../../Toggle/ToggleButton";
 import Button from "../Button/Button";
 
 export default function MenuButton({ children }: { children: string }) {
-  return <Button>{children}</Button>;
+  return (
+    <ToggleButton>
+      <Button>{children}</Button>
+    </ToggleButton>
+  );
 }

@@ -1,4 +1,5 @@
 import { createContext, ReactNode } from "react";
+import Toggle from "../../Toggle/Toggle";
 
 const MenuContext = createContext({
   open: false,
@@ -6,7 +7,11 @@ const MenuContext = createContext({
 });
 
 export default function Menu({ children }: { children: ReactNode }) {
-  return <div className="menu">{children}</div>;
+  return (
+    <Toggle>
+      <div className="menu">{children}</div>{" "}
+    </Toggle>
+  );
 }
 
 export { MenuContext };
