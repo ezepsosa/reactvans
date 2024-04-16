@@ -1,17 +1,16 @@
-import { createContext, ReactNode } from "react";
+import { ReactNode } from "react";
 import Toggle from "../../Toggle/Toggle";
 
-const MenuContext = createContext({
-  open: false,
-  toggle: () => {},
-});
-
-export default function Menu({ children }: { children: ReactNode }) {
+export default function Menu({
+  children,
+  onOpen,
+}: {
+  children: ReactNode;
+  onOpen?: () => void;
+}) {
   return (
-    <Toggle>
+    <Toggle onToggle={onOpen}>
       <div className="menu">{children}</div>{" "}
     </Toggle>
   );
 }
-
-export { MenuContext };
