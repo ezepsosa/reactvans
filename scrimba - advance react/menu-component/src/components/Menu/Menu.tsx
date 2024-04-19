@@ -1,16 +1,22 @@
-import { ReactNode } from "react";
-import Toggle from "../../Toggle/Toggle";
+import { createContext, ReactNode } from "react";
+import useToggle from "../../hooks/useToggle";
+
+const MenuContext = createContext({ open: false, openMenu: () => {} });
 
 export default function Menu({
   children,
   onOpen,
 }: {
   children: ReactNode;
-  onOpen?: () => void;
+  onOpen: () => void;
 }) {
+  const [open, openMenu] = useToggle({ onToggle: onOpen });
+
   return (
-    <Toggle onToggle={onOpen}>
-      <div className="menu">{children}</div>{" "}
-    </Toggle>
+    <MenuContext.Provider value={{ open, openMenu }}>
+      <div className="menu">{children}</div>
+    </MenuContext.Provider>
   );
 }
+
+export { MenuContext };

@@ -7,9 +7,9 @@ import Star from "./components/Star";
 export function App() {
   return (
     <>
-      <Star onChange={() => {}} />
+      <Star />
       <br />
-      <Menu onOpen={() => console.log("hi")}>
+      <Menu onOpen={() => console.log("hi tio")}>
         <MenuButton>Sports</MenuButton>
         <MenuDropdown>
           <MenuItem>Home</MenuItem>

@@ -1,11 +1,7 @@
-import { ReactNode } from "react";
+import { ReactNode, useContext } from "react";
+import { MenuContext } from "./Menu";
 
-export default function MenuDropdown({
-  children,
-}: //open,
-{
-  children: ReactNode;
-  open?: boolean;
-}) {
-  return <div className="menu-dropdown">{children}</div>;
+export default function MenuDropdown({ children }: { children: ReactNode }) {
+  const { open } = useContext(MenuContext);
+  return open ? <div className="menu-dropdown">{children}</div> : null;
 }
