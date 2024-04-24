@@ -4,10 +4,12 @@ export default function Header() {
   return (
     <header>
       <nav className="header">
-        <h2 className="header-text">#VANLIFE</h2>
-        <div className="header-text">
-          <Link to="/">Home</Link>
-          <Link to="Vans">Vans</Link>
+        <h2 className="header-text header-text-logo">
+          <Link to="/">#VANLIFE</Link>
+        </h2>
+        <div className="header-text header-text-link">
+          <Link to="about">About</Link>
+          <Link to="vans">Vans</Link>
         </div>
       </nav>
     </header>
