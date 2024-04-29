@@ -1,20 +1,36 @@
-import {
-  StyledPrimaryButton,
-  StyledPrimaryLink,
-  StyledSecondaryButton,
-  StyledSecondaryLink,
-} from "./styles";
+import { StyledButton, StyledLink } from "./styles";
 import { Props } from "./types";
-export const PrimaryButton = ({ text, to }: Props): JSX.Element =>
+export const Button = ({
+  text,
+  to,
+  padding,
+  backgroundcolor,
+  hoverbackgroundcolor,
+  color,
+  textDecoration,
+  hovercolor,
+}: Props): JSX.Element =>
   to ? (
-    <StyledPrimaryLink to={to}>{text}</StyledPrimaryLink>
+    <StyledLink
+      padding={padding}
+      hoverbackgroundcolor={hoverbackgroundcolor}
+      backgroundcolor={backgroundcolor}
+      color={color}
+      to={to}
+      textDecoration={textDecoration}
+      hovercolor={hovercolor}
+    >
+      {text}
+    </StyledLink>
   ) : (
-    <StyledPrimaryButton>{text}</StyledPrimaryButton>
-  );
-
-export const SecondaryButton = ({ text, to }: Props): JSX.Element =>
-  to ? (
-    <StyledSecondaryLink to={to}>{text}</StyledSecondaryLink>
-  ) : (
-    <StyledSecondaryButton>{text}</StyledSecondaryButton>
+    <StyledButton
+      padding={padding}
+      hoverbackgroundcolor={hoverbackgroundcolor}
+      backgroundcolor={backgroundcolor}
+      color={color}
+      textDecoration={textDecoration}
+      hovercolor={hovercolor}
+    >
+      {text}
+    </StyledButton>
   );

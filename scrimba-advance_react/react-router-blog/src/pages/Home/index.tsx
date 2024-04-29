@@ -1,11 +1,11 @@
-import { PrimaryButton } from "../../components/Button";
+import { Button } from "../../components/Button";
 import { Headline, Text } from "../../components/styles";
 import { Container } from "./style";
 function Home() {
   return (
     <Container
       style={{
-        backgroundImage: 'url("../../home_image_5.jpeg")',
+        backgroundImage: 'url("src/assets/home_image_5.jpeg")',
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "repeat",
@@ -16,7 +16,7 @@ function Home() {
         Add adventure to your life by joining the #vanlife movement.
         <br /> Rent the perfect van to make your perfect road trip.
       </Text>
-      <PrimaryButton text="Find your van" to="vans"></PrimaryButton>
+      <Button text="Find your van" to="vans"></Button>
     </Container>
   );
 }

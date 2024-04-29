@@ -3,6 +3,6 @@ export type TextProps = {
   color?: string;
   fontWeight?: number;
   fontSize?: string;
-  backgroundColor?: string;
+  backgroundcolor?: string;
   borderRadius?: string;
 };

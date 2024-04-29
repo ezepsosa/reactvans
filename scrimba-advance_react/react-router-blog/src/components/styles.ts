@@ -6,6 +6,7 @@ export const styledText = css`
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "slnt" 0;
+  margin: 1rem 0;
 `;
 
 export const Headline = styled.h1<TextProps>`

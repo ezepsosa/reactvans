@@ -11,7 +11,9 @@ export const Navbar = ({
     <div>
       {navbarlinks
         ? navbarlinks.map((link) => (
-            <NavbarLink to={link.to}>{link.text}</NavbarLink>
+            <NavbarLink key={link.to} to={link.to}>
+              {link.text}
+            </NavbarLink>
           ))
         : null}
     </div>

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { SecondaryButton } from "../../components/Button/index";
 import { Headline, Text } from "../../components/styles";
 import {
   AboutContainer,
@@ -8,6 +7,7 @@ import {
   Img,
   TextContainer,
 } from "./style";
+import { Button } from "../../components/Button";
 
 export default function About() {
   return (
@@ -34,7 +34,13 @@ export default function About() {
             Your destination is waiting. Your van is ready.
           </Headline>
           <Link to="vans" className="btn btn-secondary"></Link>
-          <SecondaryButton text="Explore our vans" to="vans" />
+          <Button
+            padding="0.9rem 2rem"
+            backgroundcolor="#000000"
+            hoverbackgroundcolor="#2e2e2e"
+            text="Explore our vans"
+            to="vans"
+          />
         </CardContainer>
       </AboutContainer>
     </>
