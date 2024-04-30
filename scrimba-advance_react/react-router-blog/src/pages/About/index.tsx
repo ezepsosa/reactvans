@@ -4,6 +4,7 @@ import {
   AboutContainer,
   BannerContainer,
   CardContainer,
+  Container,
   Img,
   TextContainer,
 } from "./style";
@@ -11,7 +12,7 @@ import { Button } from "../../components/Button";
 
 export default function About() {
   return (
-    <>
+    <Container>
       <BannerContainer>
         <Img src="src/assets/banner_about.jpg" alt="Descripción de la imagen" />
       </BannerContainer>
@@ -43,6 +44,6 @@ export default function About() {
           />
         </CardContainer>
       </AboutContainer>
-    </>
+    </Container>
   );
 }

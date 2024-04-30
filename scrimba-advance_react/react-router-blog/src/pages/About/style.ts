@@ -40,3 +40,7 @@ export const Img = styled.img`
   height: 100%;
   object-fit: cover;
 `;
+
+export const Container = styled.div`
+  height: calc(100% - 8.8rem);
+`;

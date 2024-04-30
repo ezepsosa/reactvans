@@ -27,6 +27,7 @@ const buttonStyles = css<ButtonProps>`
 
 export const StyledButton = styled.button<ButtonProps>`
   ${buttonStyles}
+  cursor: pointer;
 
   }
 `;

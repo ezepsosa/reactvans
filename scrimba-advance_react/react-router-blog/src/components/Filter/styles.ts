@@ -9,8 +9,6 @@ export const FilterContainer = styled.div`
   ${StyledContainer}
   justify-content: left;
   gap: 1rem;
-  
-
   }
 `;
 
