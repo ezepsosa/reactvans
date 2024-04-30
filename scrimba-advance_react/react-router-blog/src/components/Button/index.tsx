@@ -9,6 +9,8 @@ export const Button = ({
   color,
   textDecoration,
   hovercolor,
+  margintop,
+  marginbottom,
 }: Props): JSX.Element =>
   to ? (
     <StyledLink
@@ -19,6 +21,8 @@ export const Button = ({
       to={to}
       textDecoration={textDecoration}
       hovercolor={hovercolor}
+      margintop={margintop}
+      marginbottom={marginbottom}
     >
       {text}
     </StyledLink>
@@ -30,6 +34,8 @@ export const Button = ({
       color={color}
       textDecoration={textDecoration}
       hovercolor={hovercolor}
+      margintop={margintop}
+      marginbottom={marginbottom}
     >
       {text}
     </StyledButton>

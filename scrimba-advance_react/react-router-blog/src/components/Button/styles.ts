@@ -11,10 +11,10 @@ const buttonStyles = css<ButtonProps>`
   text-align: center;
   font-style: normal;
   font-weight: 700;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   border: none;
   transition: background-color 0.3s ease;
+  margin-top: ${({ marginbottom }) => marginbottom || "1rem"};
+  margin-bottom: ${({ margintop }) => margintop || "1rem"};
   text-decoration: ${({ textDecoration }) => textDecoration || "none"};
   color: ${({ color }) => color || "white"};
   background-color: ${({ backgroundcolor }) => backgroundcolor || "#ff8c38"};

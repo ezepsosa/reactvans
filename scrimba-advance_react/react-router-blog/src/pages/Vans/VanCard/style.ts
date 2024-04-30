@@ -5,3 +5,10 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
+
+export const Img = styled.img`
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  border-radius: 1rem;
+`;

@@ -21,7 +21,7 @@ export const Text = styled.p<TextProps>`
   color: ${({ color }) => color || "#393e3dff"};
   font-weight: ${({ fontWeight }) => fontWeight || 500};
   font-size: ${({ fontSize }) => fontSize || "1rem"};
-  background-color: ${({ backgroundColor }) => backgroundColor || "#bcac9810"};
+  background-color: ${({ backgroundcolor }) => backgroundcolor || "#bcac9810"};
   border-radius: ${({ borderRadius }) => borderRadius || "0.25rem"};
 `;
 

@@ -33,7 +33,7 @@ export default function About() {
             {" "}
             Your destination is waiting. Your van is ready.
           </Headline>
-          <Link to="vans" className="btn btn-secondary"></Link>
+          <Link to="/vans" className="btn btn-secondary"></Link>
           <Button
             padding="0.9rem 2rem"
             backgroundcolor="#000000"

@@ -7,6 +7,8 @@ export type Props = {
   color?: string;
   textDecoration?: string;
   hovercolor?: string;
+  margintop?: string;
+  marginbottom?: string;
 };
 
 export type ButtonProps = {
@@ -16,4 +18,6 @@ export type ButtonProps = {
   color?: string;
   textDecoration?: string;
   hovercolor?: string;
+  margintop?: string;
+  marginbottom?: string;
 };

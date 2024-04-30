@@ -7,6 +7,8 @@ export const Container = styled.div`
 
 export const VansContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 elementos por fila */
-  gap: 20px; /* Espacio entre los elementos */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: auto;
+  gap: 20px;
+  margin-bottom: 10rem;
 `;
