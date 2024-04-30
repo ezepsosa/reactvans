@@ -1,6 +1,6 @@
 import { Props } from "./types";
-import { Headline, Text } from "../../../components/styles";
-import { Button } from "../../../components/Button/index";
+import { Headline, Text } from "../../../../components/styles";
+import { Button } from "../../../../components/Button/index";
 import { Container, ContainerCard, Img } from "./style";
 
 export function VanCard({ imgUrl, price, title, type }: Props) {

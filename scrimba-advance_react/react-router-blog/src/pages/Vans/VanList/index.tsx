@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Filter } from "../../components/Filter";
-import { Headline } from "../../components/styles";
+import { Filter } from "../../../components/Filter";
+import { Headline } from "../../../components/styles";
 import { Container, VansContainer } from "./style";
 import { VanCard } from "./VanCard/index";
-import { Van } from "../../server/types";
+import { Van } from "../../../server/types";
 
 export default function Vans() {
   const [vans, setVans] = useState<Van[]>([]);
