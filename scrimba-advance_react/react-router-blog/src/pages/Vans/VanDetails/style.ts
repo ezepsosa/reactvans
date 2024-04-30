@@ -24,3 +24,8 @@ export const DescriptionContainer = styled.div`
   width: 90%;
   height: 50%;
 `;
+
+export const ContainerButton = styled.div`
+  display: flex;
+  justify-content: center;
+`;

@@ -3,4 +3,5 @@ export type Props = {
   title: string;
   price: number;
   type: string;
+  id: string;
 };

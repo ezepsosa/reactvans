@@ -83,9 +83,13 @@ export function MockServer({ environment = "development" }): Server {
     },
     routes() {
       this.urlPrefix = "/api";
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      this.get("/vans", (schema, _request) => {
+      this.get("/vans", (schema) => {
         return schema.all("van");
+      });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      this.get("/vans/:id", (schema, request) => {
+        const id = request.params.id;
+        return schema.find("van", id);
       });
     },
   });

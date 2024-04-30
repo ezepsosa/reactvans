@@ -5,7 +5,7 @@ import { Container, VansContainer } from "./style";
 import { VanCard } from "./VanCard/index";
 import { Van } from "../../../server/types";
 
-export default function Vans() {
+export default function VansList() {
   const [vans, setVans] = useState<Van[]>([]);
   useEffect(() => {
     fetch("/api/vans")
@@ -25,6 +25,7 @@ export default function Vans() {
             title={van.name}
             type={van.type}
             key={van.id}
+            id={van.id}
           ></VanCard>
         ))}
       </VansContainer>

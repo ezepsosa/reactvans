@@ -9,10 +9,10 @@ export const BannerContainer = styled.div`
 export const AboutContainer = styled.div`
   padding: 1rem;
   background-color: #fff7ed;
-  display: grid;
-  grid-template-rows: repeat(3, auto);
+  display: flex;
+  flex-direction: column;
   gap: 0.625rem;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
 `;
 
@@ -24,7 +24,6 @@ export const TextContainer = styled.div`
 export const CardContainer = styled.div`
   background-color: #ffcc8d;
   border-radius: 1rem;
-  padding: 0.5rem;
   height: 10.5rem;
   padding: 1.25rem;
   width: 18rem;

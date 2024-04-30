@@ -23,7 +23,7 @@ export const Text = styled.p<TextProps>`
   font-size: ${({ fontSize }) => fontSize || "1rem"};
   background-color: ${({ backgroundcolor }) =>
     backgroundcolor || "transparent"};
-  border-radius: ${({ borderRadius }) => borderRadius || "0.25rem"};
+  border-radius: ${({ borderRadius }) => borderRadius || "0.25rem"} @media;
 `;
 
 export const Span = styled.span<TextProps>`

@@ -2,8 +2,9 @@ import { Props } from "./types";
 import { Headline, Text } from "../../../../components/styles";
 import { Button } from "../../../../components/Button/index";
 import { Container, ContainerCard, Img } from "./style";
+import { Link } from "react-router-dom";
 
-export function VanCard({ imgUrl, price, title, type }: Props) {
+export function VanCard({ imgUrl, price, title, type, id }: Props) {
   const backgroundcolor =
     type == "simple" ? "#E17654" : type == "luxury" ? "#161616" : "#115E59";
 
@@ -13,15 +14,16 @@ export function VanCard({ imgUrl, price, title, type }: Props) {
     <Container>
       <Img src={imgUrl} alt={`van ${title} image`} />
       <ContainerCard>
-        <Headline fontWeight={600} color="#161616" fontSize="1rem">
-          {title}
-        </Headline>
+        <Link style={{ textDecoration: "none" }} to={`/vans/${id}`}>
+          <Headline fontWeight={600} color="#161616" fontSize="1rem">
+            {title}
+          </Headline>
+        </Link>
         <Text fontSize="1rem" fontWeight={600} color="#161616">
           {price}$/ day
         </Text>
       </ContainerCard>
       <Button
-        padding="0.55rem 1.5rem"
         backgroundcolor={backgroundcolor}
         color="#FFEAD0"
         text={
