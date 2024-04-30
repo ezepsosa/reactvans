@@ -36,7 +36,6 @@ export default function About() {
           </Headline>
           <Link to="/vans" className="btn btn-secondary"></Link>
           <Button
-            padding="0.9rem 2rem"
             backgroundcolor="#000000"
             hoverbackgroundcolor="#2e2e2e"
             text="Explore our vans"

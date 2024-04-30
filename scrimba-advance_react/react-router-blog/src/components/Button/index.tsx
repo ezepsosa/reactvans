@@ -3,7 +3,6 @@ import { Props } from "./types";
 export const Button = ({
   text,
   to,
-  padding,
   backgroundcolor,
   hoverbackgroundcolor,
   color,
@@ -11,10 +10,13 @@ export const Button = ({
   hovercolor,
   margintop,
   marginbottom,
+  height,
+  mediaHeight,
+  width,
+  mediaWidth,
 }: Props): JSX.Element =>
   to ? (
     <StyledLink
-      padding={padding}
       hoverbackgroundcolor={hoverbackgroundcolor}
       backgroundcolor={backgroundcolor}
       color={color}
@@ -23,12 +25,15 @@ export const Button = ({
       hovercolor={hovercolor}
       margintop={margintop}
       marginbottom={marginbottom}
+      height={height}
+      width={width}
+      mediaHeight={mediaHeight}
+      mediaWidth={mediaWidth}
     >
       {text}
     </StyledLink>
   ) : (
     <StyledButton
-      padding={padding}
       hoverbackgroundcolor={hoverbackgroundcolor}
       backgroundcolor={backgroundcolor}
       color={color}
@@ -36,6 +41,10 @@ export const Button = ({
       hovercolor={hovercolor}
       margintop={margintop}
       marginbottom={marginbottom}
+      height={height}
+      width={width}
+      mediaHeight={mediaHeight}
+      mediaWidth={mediaWidth}
     >
       {text}
     </StyledButton>
