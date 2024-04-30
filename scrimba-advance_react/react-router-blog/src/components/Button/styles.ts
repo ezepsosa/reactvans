@@ -24,6 +24,7 @@ const buttonStyles = css<ButtonProps>`
   @media (max-width: 768px) {
     height: ${({ mediaHeight }) => mediaHeight || "1rem"};
     width: ${({ mediaWidth }) => mediaWidth || "8rem"};
+    line-height: ${({ mediaHeight }) => mediaHeight || "1rem"};
   }
   &:hover {
     background-color: ${({ hoverbackgroundcolor }) =>
