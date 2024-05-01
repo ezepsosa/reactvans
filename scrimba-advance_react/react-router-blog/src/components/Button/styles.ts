@@ -18,18 +18,18 @@ const buttonStyles = css<ButtonProps>`
   text-decoration: ${({ textDecoration }) => textDecoration || "none"};
   color: ${({ color }) => color || "white"};
   background-color: ${({ backgroundcolor }) => backgroundcolor || "#ff8c38"};
-  heigth: ${({ height }) => height || "3rem"};
+  height: ${({ height }) => height || "3rem"};
   line-height: ${({ height }) => height || "3rem"};
   width: ${({ width }) => width || "16rem"};
   @media (max-width: 768px) {
-    height: ${({ mediaHeight }) => mediaHeight || "1rem"};
-    width: ${({ mediaWidth }) => mediaWidth || "8rem"};
-    line-height: ${({ mediaHeight }) => mediaHeight || "1rem"};
+    height: ${({ mediaheight }) => mediaheight || "1rem"};
+    width: ${({ mediawidth }) => mediawidth || "8rem"};
+    line-height: ${({ mediaheight }) => mediaheight || "1rem"};
   }
   &:hover {
     background-color: ${({ hoverbackgroundcolor }) =>
       hoverbackgroundcolor || "#d1702b"};
-    color: ${({ hovercolor }) => hovercolor || "black"};
+    color: ${({ hovercolor }) => hovercolor || "white"};
 
 `;
 

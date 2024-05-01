@@ -11,9 +11,9 @@ export const Button = ({
   margintop,
   marginbottom,
   height,
-  mediaHeight,
+  mediaheight,
   width,
-  mediaWidth,
+  mediawidth,
 }: Props): JSX.Element =>
   to ? (
     <StyledLink
@@ -27,8 +27,8 @@ export const Button = ({
       marginbottom={marginbottom}
       height={height}
       width={width}
-      mediaHeight={mediaHeight}
-      mediaWidth={mediaWidth}
+      mediaheight={mediaheight}
+      mediawidth={mediawidth}
     >
       {text}
     </StyledLink>
@@ -43,8 +43,8 @@ export const Button = ({
       marginbottom={marginbottom}
       height={height}
       width={width}
-      mediaHeight={mediaHeight}
-      mediaWidth={mediaWidth}
+      mediaheight={mediaheight}
+      mediawidth={mediawidth}
     >
       {text}
     </StyledButton>

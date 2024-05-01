@@ -4,10 +4,13 @@ export const ContainerCard = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 992px) {
+    align-items: left;
+  }
 `;
 
 export const Container = styled.div`
-  heigth: 100%;
+  height: 100%;
   width: 100%;
 `;
 

@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const ContainerImg = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: calc(100% - 8.8rem);
+  flex: 1;
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  text-align: center;
 `;

@@ -14,6 +14,10 @@ export const Headline = styled.h1<TextProps>`
   color: ${({ color }) => color || "#393e3dff"};
   font-weight: ${({ fontWeight }) => fontWeight || 800};
   font-size: ${({ fontSize }) => fontSize || "2rem"};
+  margin: 1rem;
+  @media (max-width: 768px) {
+    font-size: ${({ mediaFontSize }) => mediaFontSize || "2rem"};
+  }
 `;
 
 export const Text = styled.p<TextProps>`

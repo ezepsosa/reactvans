@@ -32,6 +32,9 @@ export const CardContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  @media (max-width: 768px) {
+    height: 8rem;
+  }
 `;
 
 export const Img = styled.img`
@@ -42,4 +45,6 @@ export const Img = styled.img`
 
 export const Container = styled.div`
   height: calc(100% - 8.8rem);
+  flex: 1 1 auto;
+  overflow-y: auto;
 `;

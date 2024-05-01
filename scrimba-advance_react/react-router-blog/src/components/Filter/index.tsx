@@ -13,8 +13,8 @@ export const Filter = ({ filters }: Props): JSX.Element => (
           color="black"
           hoverbackgroundcolor="#ffe5c4"
           key={element}
-          mediaHeight="4rem"
-          mediaWidth="7rem"
+          mediaheight="4rem"
+          mediawidth="7rem"
         ></Button>
       ))}
     </FilterContainer>

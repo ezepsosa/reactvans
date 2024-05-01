@@ -7,7 +7,6 @@ export const StyledFooter = styled.footer`
   align-items: center;
   justify-content: center;
   text-align: center;
-  bottom: 0;
-  left: 0;
   width: 100%;
+  margin-top: auto;
 `;

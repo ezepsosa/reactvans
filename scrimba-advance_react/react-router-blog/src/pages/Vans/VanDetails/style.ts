@@ -4,6 +4,10 @@ export const Container = styled.div`
   background-color: #fff7ed;
   height: 100%;
   width: 100%;
+  display: flex;
+  @media (max-width: 992px) {
+    display: block;
+  }
 `;
 
 export const Img = styled.img`

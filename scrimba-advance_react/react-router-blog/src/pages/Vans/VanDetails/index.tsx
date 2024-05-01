@@ -40,12 +40,18 @@ export default function VansDetail() {
       </ImgContainer>
       <DescriptionContainer>
         <Button
-          text={van?.type}
-          mediaHeight="2rem"
-          mediaWidth="5.3rem"
+          text={
+            van
+              ? van.type.substring(0, 1).toUpperCase() +
+                van.type.substring(1, van.type.length)
+              : ""
+          }
+          mediaheight="2rem"
+          mediawidth="5.3rem"
           backgroundcolor={backgroundcolor}
           hoverbackgroundcolor={hoverbackgroundcolor}
           color="#FFEAD0"
+          width="6rem"
         ></Button>
         <Headline fontWeight={700} fontSize="2rem">
           {van?.name}
@@ -62,8 +68,8 @@ export default function VansDetail() {
         <ContainerButton>
           {" "}
           <Button
-            mediaHeight="3rem"
-            mediaWidth="20rem"
+            mediaheight="3rem"
+            mediawidth="20rem"
             text="Rent this van"
           ></Button>
         </ContainerButton>

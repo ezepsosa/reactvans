@@ -30,7 +30,12 @@ export default function About() {
           </Text>
         </TextContainer>
         <CardContainer>
-          <Headline color="#000" fontWeight={600} fontSize="1.5rem">
+          <Headline
+            mediaFontSize="1rem"
+            color="#000"
+            fontWeight={600}
+            fontSize="1.5rem"
+          >
             {" "}
             Your destination is waiting. Your van is ready.
           </Headline>
@@ -40,6 +45,8 @@ export default function About() {
             hoverbackgroundcolor="#2e2e2e"
             text="Explore our vans"
             to="vans"
+            mediaheight="2rem"
+            mediawidth="12rem"
           />
         </CardContainer>
       </AboutContainer>

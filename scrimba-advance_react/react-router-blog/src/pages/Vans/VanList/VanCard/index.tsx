@@ -32,6 +32,10 @@ export function VanCard({ imgUrl, price, title, type, id }: Props) {
         marginbottom="0.25rem"
         hoverbackgroundcolor={hoverbackgroundcolor}
         hovercolor="#FFEAD0"
+        height="2rem"
+        width="6rem"
+        mediawidth="12rem"
+        mediaheight="2rem"
       ></Button>
     </Container>
   );

@@ -10,8 +10,8 @@ export type Props = {
   marginbottom?: string;
   height?: string;
   width?: string;
-  mediaWidth?: string;
-  mediaHeight?: string;
+  mediawidth?: string;
+  mediaheight?: string;
 };
 
 export type ButtonProps = {
@@ -24,6 +24,6 @@ export type ButtonProps = {
   marginbottom?: string;
   height?: string;
   width?: string;
-  mediaWidth?: string;
-  mediaHeight?: string;
+  mediawidth?: string;
+  mediaheight?: string;
 };
