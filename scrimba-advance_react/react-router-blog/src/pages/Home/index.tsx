@@ -1,3 +1,4 @@
+import assets from "../../assets";
 import { Button } from "../../components/Button";
 import { Headline, Text } from "../../components/styles";
 import { Container, ContainerImg } from "./style";
@@ -5,7 +6,7 @@ function Home() {
   return (
     <ContainerImg
       style={{
-        backgroundImage: 'url("src/assets/home_image_5.jpeg")',
+        backgroundImage: "url(" + assets.homepageimg + ")",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "repeat",

@@ -9,12 +9,13 @@ import {
   TextContainer,
 } from "./style";
 import { Button } from "../../components/Button";
+import assets from "../../assets";
 
 export default function About() {
   return (
     <Container>
       <BannerContainer>
-        <Img src="src/assets/banner_about.jpg" alt="Descripción de la imagen" />
+        <Img src={assets.aboutpageimg} alt="About image used as banner" />
       </BannerContainer>
       <AboutContainer>
         <TextContainer>
