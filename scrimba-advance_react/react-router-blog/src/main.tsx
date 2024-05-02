@@ -9,9 +9,7 @@ import { RoutesComponent } from "./routes";
 
 const environment = process.env.NODE_ENV;
 
-if (environment !== "production") {
-  MockServer({ environment });
-}
+MockServer({ environment });
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <Container>
