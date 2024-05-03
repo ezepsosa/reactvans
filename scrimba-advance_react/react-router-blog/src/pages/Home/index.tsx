@@ -1,6 +1,6 @@
-import assets from "../../assets";
+import assets from "../../components/assets";
 import { Button } from "../../components/Button";
-import { Headline, Text } from "../../components/styles";
+import { Headline, Text } from "../../components/General/styles";
 import { Container, ContainerImg } from "./style";
 function Home() {
   return (

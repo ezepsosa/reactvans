@@ -1,4 +1,4 @@
-import { Span } from "../../components/styles";
+import { Span } from "../../components/General/styles";
 import { StyledFooter } from "./style";
 
 export default function Footer({ textFooter }: { textFooter: string }) {

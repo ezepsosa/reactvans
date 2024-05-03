@@ -5,5 +5,5 @@ export type TextProps = {
   fontSize?: string;
   backgroundcolor?: string;
   borderRadius?: string;
-  mediaFontSize?: string;
+  mediafontsize?: string;
 };

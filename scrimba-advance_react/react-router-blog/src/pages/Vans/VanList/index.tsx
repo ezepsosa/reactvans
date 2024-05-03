@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Filter } from "../../../components/Filter";
-import { Headline } from "../../../components/styles";
+import { Headline } from "../../../components/General/styles";
 import { Container, VansContainer } from "./style";
 import { VanCard } from "./VanCard/index";
 import { Van } from "../../../server/types";

@@ -16,7 +16,7 @@ export const Headline = styled.h1<TextProps>`
   font-size: ${({ fontSize }) => fontSize || "2rem"};
   margin: 1rem;
   @media (max-width: 768px) {
-    font-size: ${({ mediaFontSize }) => mediaFontSize || "2rem"};
+    font-size: ${({ mediafontsize }) => mediafontsize || "2rem"};
   }
 `;
 

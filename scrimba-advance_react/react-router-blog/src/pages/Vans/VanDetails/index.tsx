@@ -9,7 +9,7 @@ import {
   ImgContainer,
 } from "./style";
 import { Button } from "../../../components/Button/index";
-import { Headline, Span, Text } from "../../../components/styles";
+import { Headline, Span, Text } from "../../../components/General/styles";
 
 export default function VansDetail() {
   const param = useParams();

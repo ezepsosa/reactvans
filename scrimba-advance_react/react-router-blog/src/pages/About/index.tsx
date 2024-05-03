@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Headline, Text } from "../../components/styles";
+import { Headline, Text } from "../../components/General/styles";
 import {
   AboutContainer,
   BannerContainer,
@@ -9,7 +9,7 @@ import {
   TextContainer,
 } from "./style";
 import { Button } from "../../components/Button";
-import assets from "../../assets";
+import assets from "../../components/assets";
 
 export default function About() {
   return (
@@ -32,7 +32,7 @@ export default function About() {
         </TextContainer>
         <CardContainer>
           <Headline
-            mediaFontSize="1rem"
+            mediafontsize="1rem"
             color="#000"
             fontWeight={600}
             fontSize="1.5rem"

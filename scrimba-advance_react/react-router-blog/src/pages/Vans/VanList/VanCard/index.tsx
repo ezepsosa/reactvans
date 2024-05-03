@@ -1,5 +1,5 @@
 import { Props } from "./types";
-import { Headline, Text } from "../../../../components/styles";
+import { Headline, Text } from "../../../../components/General/styles";
 import { Button } from "../../../../components/Button/index";
 import { Container, ContainerCard, Img } from "./style";
 import { Link } from "react-router-dom";
