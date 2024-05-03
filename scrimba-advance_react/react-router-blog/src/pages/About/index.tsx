@@ -40,12 +40,11 @@ export default function About() {
             {" "}
             Your destination is waiting. Your van is ready.
           </Headline>
-          <Link to="/vans" className="btn btn-secondary"></Link>
           <Button
             backgroundcolor="#000000"
             hoverbackgroundcolor="#2e2e2e"
             text="Explore our vans"
-            to="vans"
+            to="/vans"
             mediaheight="2rem"
             mediawidth="12rem"
           />
