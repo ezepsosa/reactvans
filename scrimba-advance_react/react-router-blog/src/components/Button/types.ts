@@ -1,4 +1,5 @@
 export type Props = {
+  typeElement?: string;
   text?: string;
   to?: string;
   backgroundcolor?: string;
@@ -12,6 +13,10 @@ export type Props = {
   width?: string;
   mediawidth?: string;
   mediaheight?: string;
+  fontSize?: string;
+  fontweight?: string;
+  mediafontweight?: string;
+  mediafontSize?: string;
 };
 
 export type ButtonProps = {
@@ -26,4 +31,8 @@ export type ButtonProps = {
   width?: string;
   mediawidth?: string;
   mediaheight?: string;
+  fontSize?: string;
+  fontweight?: string;
+  mediafontweight?: string;
+  mediafontSize?: string;
 };

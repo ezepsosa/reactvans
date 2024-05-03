@@ -1,51 +1,20 @@
-import { StyledButton, StyledLink } from "./styles";
+import { StyledButton, StyledLink, StyledNavLink } from "./styles";
 import { Props } from "./types";
+
 export const Button = ({
   text,
   to,
-  backgroundcolor,
-  hoverbackgroundcolor,
-  color,
-  textDecoration,
-  hovercolor,
-  margintop,
-  marginbottom,
-  height,
-  mediaheight,
-  width,
-  mediawidth,
+  typeElement,
+  ...commonProps
 }: Props): JSX.Element =>
-  to ? (
-    <StyledLink
-      hoverbackgroundcolor={hoverbackgroundcolor}
-      backgroundcolor={backgroundcolor}
-      color={color}
-      to={to}
-      textDecoration={textDecoration}
-      hovercolor={hovercolor}
-      margintop={margintop}
-      marginbottom={marginbottom}
-      height={height}
-      width={width}
-      mediaheight={mediaheight}
-      mediawidth={mediawidth}
-    >
+  to! ? (
+    <StyledButton {...commonProps}>{text}</StyledButton>
+  ) : typeElement == "navLink" ? (
+    <StyledNavLink to={to!} {...commonProps}>
+      {text}
+    </StyledNavLink>
+  ) : (
+    <StyledLink to={to!} {...commonProps}>
       {text}
     </StyledLink>
-  ) : (
-    <StyledButton
-      hoverbackgroundcolor={hoverbackgroundcolor}
-      backgroundcolor={backgroundcolor}
-      color={color}
-      textDecoration={textDecoration}
-      hovercolor={hovercolor}
-      margintop={margintop}
-      marginbottom={marginbottom}
-      height={height}
-      width={width}
-      mediaheight={mediaheight}
-      mediawidth={mediawidth}
-    >
-      {text}
-    </StyledButton>
   );

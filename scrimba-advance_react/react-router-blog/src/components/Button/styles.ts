@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { ButtonProps } from "./types";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const buttonStyles = css<ButtonProps>`
   font-family: "Inter", sans-serif;
@@ -10,7 +10,6 @@ const buttonStyles = css<ButtonProps>`
   display: inline-block;
   text-align: center;
   font-style: normal;
-  font-weight: 700;
   border: none;
   transition: background-color 0.3s ease;
   margin-top: ${({ marginbottom }) => marginbottom || "1rem"};
@@ -21,10 +20,14 @@ const buttonStyles = css<ButtonProps>`
   height: ${({ height }) => height || "3rem"};
   line-height: ${({ height }) => height || "3rem"};
   width: ${({ width }) => width || "16rem"};
+  font-size: ${({ fontSize }) => fontSize || "0.85rem"};
+  font-weight: ${({ fontweight }) => fontweight || "700"};
   @media (max-width: 768px) {
     height: ${({ mediaheight }) => mediaheight || "1rem"};
     width: ${({ mediawidth }) => mediawidth || "8rem"};
     line-height: ${({ mediaheight }) => mediaheight || "1rem"};
+    font-size: ${({ mediafontSize }) => mediafontSize || "0.85rem"};
+    font-weight: ${({ mediafontweight }) => mediafontweight || "700"};
   }
   &:hover {
     background-color: ${({ hoverbackgroundcolor }) =>
@@ -41,5 +44,9 @@ export const StyledButton = styled.button<ButtonProps>`
 `;
 
 export const StyledLink = styled(Link)<ButtonProps>`
+  ${buttonStyles}
+`;
+
+export const StyledNavLink = styled(NavLink)<ButtonProps>`
   ${buttonStyles}
 `;
