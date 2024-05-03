@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { ButtonProps } from "./types";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const buttonStyles = css<ButtonProps>`
   font-family: "Inter", sans-serif;
@@ -44,9 +44,5 @@ export const StyledButton = styled.button<ButtonProps>`
 `;
 
 export const StyledLink = styled(Link)<ButtonProps>`
-  ${buttonStyles}
-`;
-
-export const StyledNavLink = styled(NavLink)<ButtonProps>`
   ${buttonStyles}
 `;
