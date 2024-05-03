@@ -1,5 +1,11 @@
 import { Props } from "./types";
-import { NavbarContainer, NavbarLinkLogo, NavbarLink } from "./styles";
+import {
+  NavbarContainer,
+  NavbarLinkLogo,
+  NavbarLink,
+  GroupContainer,
+  ElementContainer,
+} from "./styles";
 
 export const Navbar = ({
   tologo,
@@ -7,15 +13,21 @@ export const Navbar = ({
   navbarlinks,
 }: Props): JSX.Element => (
   <NavbarContainer>
-    <NavbarLinkLogo to={tologo}>{textlogo}</NavbarLinkLogo>
-    <div>
-      {navbarlinks
-        ? navbarlinks.map((link) => (
-            <NavbarLink key={link.to} to={link.to}>
-              {link.text}
-            </NavbarLink>
-          ))
-        : null}
-    </div>
+    <GroupContainer>
+      <ElementContainer>
+        <NavbarLinkLogo to={tologo}>{textlogo}</NavbarLinkLogo>
+      </ElementContainer>
+      <GroupContainer>
+        {navbarlinks
+          ? navbarlinks.map((link) => (
+              <ElementContainer>
+                <NavbarLink key={link.to} to={link.to}>
+                  {link.text}
+                </NavbarLink>
+              </ElementContainer>
+            ))
+          : null}
+      </GroupContainer>
+    </GroupContainer>
   </NavbarContainer>
 );

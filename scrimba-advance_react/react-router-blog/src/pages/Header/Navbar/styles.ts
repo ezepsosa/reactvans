@@ -3,10 +3,16 @@ import styled from "styled-components";
 
 export const NavbarContainer = styled.nav`
   padding: 1rem;
+`;
+
+export const GroupContainer = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  list-style-type: none;
 `;
+
+export const ElementContainer = styled.li``;
 
 export const NavbarLinkLogo = styled(Link)`
   font-family: "Inter", sans-serif;
