@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Headline, Text } from "../../components/General/styles";
 import {
   AboutContainer,

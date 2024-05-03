@@ -10,6 +10,7 @@ export const GroupContainer = styled.ul`
   justify-content: space-between;
   align-items: center;
   list-style-type: none;
+  margin: 0;
 `;
 
 export const ElementContainer = styled.li``;
