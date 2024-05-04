@@ -17,6 +17,7 @@ export function MockServer({ environment = "development" }): Server {
         imageUrl:
           "https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png",
         type: "simple",
+        hostId: 123,
       }),
     },
     seeds(server) {
@@ -29,6 +30,7 @@ export function MockServer({ environment = "development" }): Server {
         imageUrl:
           "https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png",
         type: "simple",
+        hostId: 123,
       });
       server.create("van", {
         id: "2",
@@ -39,6 +41,7 @@ export function MockServer({ environment = "development" }): Server {
         imageUrl:
           "https://assets.scrimba.com/advanced-react/react-router/beach-bum.png",
         type: "rugged",
+        hostId: 456,
       });
       server.create("van", {
         id: "3",
@@ -49,6 +52,7 @@ export function MockServer({ environment = "development" }): Server {
         imageUrl:
           "https://assets.scrimba.com/advanced-react/react-router/reliable-red.png",
         type: "luxury",
+        hostId: 123,
       });
       server.create("van", {
         id: "4",
@@ -59,6 +63,7 @@ export function MockServer({ environment = "development" }): Server {
         imageUrl:
           "https://assets.scrimba.com/advanced-react/react-router/dreamfinder.png",
         type: "simple",
+        hostId: 123,
       });
       server.create("van", {
         id: "5",
@@ -69,6 +74,7 @@ export function MockServer({ environment = "development" }): Server {
         imageUrl:
           "https://assets.scrimba.com/advanced-react/react-router/the-cruiser.png",
         type: "luxury",
+        hostId: 456,
       });
       server.create("van", {
         id: "6",
@@ -79,6 +85,7 @@ export function MockServer({ environment = "development" }): Server {
         imageUrl:
           "https://assets.scrimba.com/advanced-react/react-router/green-wonder.png",
         type: "rugged",
+        hostId: 789,
       });
     },
     routes() {
@@ -90,6 +97,15 @@ export function MockServer({ environment = "development" }): Server {
       this.get("/vans/:id", (schema, request) => {
         const id = request.params.id;
         return schema.find("van", id);
+      });
+
+      this.get("/host/vans/", (schema) => {
+        return schema.where("van", { hostId: 123 });
+      });
+
+      this.get("/host/vans/:id", (schema, request) => {
+        const id = request.params.id;
+        return schema.where("van", { hostId: 123, id: id });
       });
     },
   });
