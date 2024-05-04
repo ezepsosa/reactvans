@@ -32,12 +32,10 @@ export default function Meme() {
   }
 
   function handleInput(event: ChangeEvent<HTMLInputElement>) {
-    console.log("hi");
     const { name, value } = event.target;
     setMeme((prev) => {
       return { ...prev, [name]: [value] };
     });
-    console.log(value);
   }
 
   return (

@@ -7,7 +7,6 @@ export default function StarWars() {
     fetch(`https://swapi.dev/api/people/${input}`)
       .then((res) => res.json())
       .then((data) => setStarWars(data));
-    console.log("rendered");
   }, [input]);
 
   function handleit(event: ChangeEvent<HTMLInputElement>) {

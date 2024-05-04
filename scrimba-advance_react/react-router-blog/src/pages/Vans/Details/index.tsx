@@ -14,7 +14,6 @@ import { Headline, Span, Text } from "../../../components/General/styles";
 export default function VansDetail() {
   const param = useParams();
   const [van, setVan] = useState<Van>();
-  console.log(param.id);
   useEffect(() => {
     fetch(`/api/vans/${param.id}`)
       .then((res) => res.json())
