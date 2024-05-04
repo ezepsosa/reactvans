@@ -3,6 +3,7 @@ import { NavbarLinkTypeProps } from "./Navbar/types";
 import { StyledContainer } from "./style";
 export default function Header() {
   const navbarLinks: NavbarLinkTypeProps[] = [
+    { to: "/host", text: "Host" },
     { to: "/about", text: "About" },
     { to: "/vans", text: "Vans" },
   ];

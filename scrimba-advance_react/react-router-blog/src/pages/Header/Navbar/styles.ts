@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const NavbarContainer = styled.nav`
@@ -26,7 +26,7 @@ export const NavbarLinkLogo = styled(Link)`
   color: #000000;
 `;
 
-export const NavbarLink = styled(Link)`
+export const NavbarLink = styled(NavLink)`
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -36,4 +36,7 @@ export const NavbarLink = styled(Link)`
   color: #4d4d4d;
   font-size: 1.25rem;
   margin-right: 1rem;
+  &:hover {
+    color: black;
+  }
 `;

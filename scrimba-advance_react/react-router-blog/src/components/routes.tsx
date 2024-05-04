@@ -16,7 +16,6 @@ export function RoutesComponent() {
         <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
-
           <Route path="/vans">
             <Route index element={<VansList />} />
             <Route path=":id" element={<VansDetail />} />

@@ -1,44 +1,37 @@
-import { NavLink } from "react-router-dom";
-import { Container, FilterContainer } from "./styles";
+import { Container, FilterContainer, StyledNavLink } from "./styles";
 import { Props } from "./types";
 
 export function Navbar({ buttons }: Props) {
-  console.log();
-  console.log(
-    window.location.pathname
-      .substring(1, window.location.pathname.length)
-      .toLowerCase()
-      .includes("review")
-      ? "underline"
-      : "none"
-  );
   return (
     <Container>
       <FilterContainer>
-        {buttons.map((element) => (
-          <NavLink
-            to={element.toLowerCase() == "dashboard" ? "/host" : `${element}`}
-            style={({ isActive }) => {
-              return isActive
-                ? { textDecoration: "underline" }
-                : { textDecoration: "none" };
-            }}
-          >
-            {element}
-          </NavLink>
-        ))}
+        {buttons.map((element) =>
+          buttons.indexOf(element) == 0 ? (
+            <StyledNavLink
+              to={``}
+              style={({ isActive }) =>
+                isActive
+                  ? { textDecoration: "underline", color: "black" }
+                  : { textDecoration: "none" }
+              }
+              end
+            >
+              {element}
+            </StyledNavLink>
+          ) : (
+            <StyledNavLink
+              to={`${element.toLowerCase()}`}
+              style={({ isActive }) =>
+                isActive
+                  ? { textDecoration: "underline", color: "black" }
+                  : { textDecoration: "none" }
+              }
+            >
+              {element}
+            </StyledNavLink>
+          )
+        )}
       </FilterContainer>
     </Container>
   );
-}
-
-{
-  /*
-  <NavLink
-            to={element}
-            className={({ isActive }) => (isActive ? "active" : "dsds")}
-          >
-            {element}
-          </NavLink>
-          */
 }

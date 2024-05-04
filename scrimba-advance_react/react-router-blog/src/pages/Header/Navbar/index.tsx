@@ -21,7 +21,15 @@ export const Navbar = ({
         {navbarlinks
           ? navbarlinks.map((link) => (
               <ElementContainer>
-                <NavbarLink key={link.to} to={link.to}>
+                <NavbarLink
+                  style={({ isActive }) =>
+                    isActive
+                      ? { textDecoration: "underline", color: "black" }
+                      : { textDecoration: "none" }
+                  }
+                  key={link.to}
+                  to={link.to}
+                >
                   {link.text}
                 </NavbarLink>
               </ElementContainer>

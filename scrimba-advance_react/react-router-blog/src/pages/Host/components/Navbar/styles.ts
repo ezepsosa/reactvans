@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
-import { NavLinkProps } from "./types";
 
 export const StyledContainer = css`
   display: flex;
@@ -24,6 +23,14 @@ export const Container = styled.div`
   }
 `;
 
-export const StyledNavLink = styled(NavLink)<NavLinkProps>`
-  text-decoration: ${({ textdecoration }) => textdecoration || "none"};
+export const StyledNavLink = styled(NavLink)`
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-weight: 600;
+  text-decoration: none;
+  color: #4d4d4d;
+  font-size: 1.25rem;
+  margin-right: 1rem;
 `;
