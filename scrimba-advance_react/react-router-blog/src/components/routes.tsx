@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import VansList from "../pages/Vans/VanList";
-import VansDetail from "../pages/Vans/VanDetails";
+import VansDetail from "../pages/Vans/Details";
 import { Layout } from "./layout";
 import { HostLayout } from "../pages/Host/hostlayour";
 import { Income } from "../pages/Host/Income";
