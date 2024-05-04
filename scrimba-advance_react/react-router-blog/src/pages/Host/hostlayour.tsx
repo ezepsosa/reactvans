@@ -4,7 +4,7 @@ import { Navbar } from "./components/Navbar";
 export function HostLayout() {
   return (
     <div>
-      <Navbar buttons={["Dashboard", "Income", "Reviews"]}></Navbar>
+      <Navbar buttons={["Dashboard", "Income", "Vans", "Reviews"]}></Navbar>
       <Outlet />
     </div>
   );

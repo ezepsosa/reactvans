@@ -15,19 +15,20 @@ export const Navbar = ({
   <NavbarContainer>
     <GroupContainer>
       <ElementContainer>
-        <NavbarLinkLogo to={tologo}>{textlogo}</NavbarLinkLogo>
+        <NavbarLinkLogo key={textlogo.toLowerCase()} to={tologo}>
+          {textlogo}
+        </NavbarLinkLogo>
       </ElementContainer>
       <GroupContainer>
         {navbarlinks
           ? navbarlinks.map((link) => (
-              <ElementContainer>
+              <ElementContainer key={link.text.toLowerCase()}>
                 <NavbarLink
                   style={({ isActive }) =>
                     isActive
                       ? { textDecoration: "underline", color: "black" }
                       : { textDecoration: "none" }
                   }
-                  key={link.to}
                   to={link.to}
                 >
                   {link.text}

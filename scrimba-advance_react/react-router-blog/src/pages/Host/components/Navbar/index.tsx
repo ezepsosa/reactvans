@@ -14,6 +14,7 @@ export function Navbar({ buttons }: Props) {
                   ? { textDecoration: "underline", color: "black" }
                   : { textDecoration: "none" }
               }
+              key={element.toLowerCase()}
               end
             >
               {element}
@@ -26,6 +27,7 @@ export function Navbar({ buttons }: Props) {
                   ? { textDecoration: "underline", color: "black" }
                   : { textDecoration: "none" }
               }
+              key={element.toLowerCase()}
             >
               {element}
             </StyledNavLink>
