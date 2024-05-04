@@ -99,7 +99,7 @@ export function MockServer({ environment = "development" }): Server {
         return schema.find("van", id);
       });
 
-      this.get("/host/vans/", (schema) => {
+      this.get("/host/vans", (schema) => {
         return schema.where("van", { hostId: 123 });
       });
 
