@@ -1,7 +1,7 @@
 import assets from "../../components/assets";
 import { Button } from "../../components/Button";
 import { Headline, Text } from "../../components/General/styles";
-import { Container, ContainerImg } from "./style";
+import { Container, ContainerImg } from "./styles";
 function Home() {
   return (
     <ContainerImg

@@ -6,7 +6,7 @@ import {
   Container,
   Img,
   TextContainer,
-} from "./style";
+} from "./styles";
 import { Button } from "../../components/Button";
 import assets from "../../components/assets";
 

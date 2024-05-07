@@ -10,6 +10,9 @@ import { Reviews } from "../pages/Host/Reviews";
 import { Dashboard } from "../pages/Host/Dashboard";
 import HostVansList from "../pages/Host/Vans/List";
 import HostVansDetails from "../pages/Host/Vans/Details";
+import { PricingTabHostVan } from "../pages/Host/Vans/Details/Van/PricingTab";
+import { DetailsTabHostVan } from "../pages/Host/Vans/Details/Van/DetailsTab";
+import { PhotosTabHostVan } from "../pages/Host/Vans/Details/Van/PhotosTab";
 
 export function RoutesComponent() {
   return (
@@ -29,9 +32,9 @@ export function RoutesComponent() {
             <Route path="vans">
               <Route index element={<HostVansList />} />
               <Route path=":id" element={<HostVansDetails />}>
-                <Route path="" element={<h1>details here</h1>} />
-                <Route path="pricing" element={<h1>pricing here</h1>} />
-                <Route path="photos" element={<h1>photos here</h1>} />
+                <Route path="" element={<DetailsTabHostVan />} />
+                <Route path="pricing" element={<PricingTabHostVan />} />
+                <Route path="photos" element={<PhotosTabHostVan />} />
               </Route>
             </Route>
           </Route>
