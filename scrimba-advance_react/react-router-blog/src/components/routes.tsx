@@ -28,7 +28,11 @@ export function RoutesComponent() {
             <Route path="reviews" element={<Reviews />} />
             <Route path="vans">
               <Route index element={<HostVansList />} />
-              <Route path=":id" element={<HostVansDetails />} />
+              <Route path=":id" element={<HostVansDetails />}>
+                <Route path="" element={<h1>details here</h1>} />
+                <Route path="pricing" element={<h1>pricing here</h1>} />
+                <Route path="photos" element={<h1>photos here</h1>} />
+              </Route>
             </Route>
           </Route>
         </Route>
