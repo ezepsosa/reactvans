@@ -1,8 +1,9 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useOutletContext } from "react-router-dom";
 import { Button } from "../../../../../components/Button";
 import { Span } from "../../../../../components/General/styles";
 import { Van } from "../../../../../server/types";
 import { Navbar } from "../../../components/Navbar";
+import { ContextType } from "./types";
 import {
   ContainerInfo,
   ContainerVan,
@@ -10,7 +11,7 @@ import {
   TextVanElement,
   VanBody,
   VanHead,
-} from "./style";
+} from "./styles";
 
 export default function VanInfo({ van }: { van: Van }) {
   const backgroundcolor =
@@ -54,8 +55,12 @@ export default function VanInfo({ van }: { van: Van }) {
       </VanHead>
       <VanBody>
         <Navbar buttons={["Details", "Pricing", "Photos"]} />
-        <Outlet />
+        <Outlet context={{ van } satisfies ContextType} />
       </VanBody>
     </ContainerVan>
   );
+}
+
+export function useVan() {
+  return useOutletContext<ContextType>();
 }

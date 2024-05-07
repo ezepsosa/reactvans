@@ -3,7 +3,7 @@ import { Text } from "../../../../components/General/styles";
 import { Van } from "../../../../server/types";
 import { FaArrowLeft } from "react-icons/fa";
 import { useParams } from "react-router-dom";
-import { Container, ContainerText } from "./style";
+import { Container, ContainerText } from "./styles";
 import VanInfo from "./Van";
 
 export default function HostVansDetails() {
