@@ -9,7 +9,7 @@ export const StyledContainer = css`
 export const FilterContainer = styled.div`
   ${StyledContainer}
   justify-content: left;
-  gap: 1rem;
+  gap: 0.5rem;
   }
 `;
 
@@ -30,7 +30,11 @@ export const StyledNavLink = styled(NavLink)`
   font-variation-settings: "slnt" 0;
   font-weight: 600;
   text-decoration: none;
-  color: #4d4d4d;
   font-size: 1.25rem;
+
+  color: #4d4d4d;
   margin-right: 1rem;
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;

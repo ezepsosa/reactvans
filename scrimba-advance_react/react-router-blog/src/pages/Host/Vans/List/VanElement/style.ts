@@ -31,9 +31,8 @@ export const TextVanElement = styled.p`
   font-style: normal;
   font-variation-settings: "slnt" 0;
   margin: 1rem 0;
-  color: "#393e3dff";
+  color: #393e3dff;
   font-weight: 700;
-  font-size: "1.2rem";
   margin-top: 1rem;
   margin-bottom: 0rem;
 `;
