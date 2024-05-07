@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Img = styled.img`
@@ -35,4 +36,11 @@ export const TextVanElement = styled.p`
   font-size: "1.2rem";
   margin-top: 1rem;
   margin-bottom: 0rem;
+`;
+
+export const LinkedStyle = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  color: ;
 `;

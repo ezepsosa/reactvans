@@ -3,6 +3,7 @@ import { Headline } from "../../../../components/General/styles";
 import { VanElement } from "./VanElement/index";
 import { useEffect, useState } from "react";
 import { Van } from "../../../../server/types";
+import { LinkedStyle } from "./VanElement/style";
 
 export default function HostVansList() {
   const [vans, setVans] = useState<Van[]>();
@@ -16,12 +17,14 @@ export default function HostVansList() {
       <Headline>Your listed vans</Headline>
       <VanElementContainer>
         {vans?.map((van) => (
-          <VanElement
-            key={van.imageUrl}
-            title={van.name}
-            img={van.imageUrl}
-            price={van.price}
-          />
+          <LinkedStyle to={van.id}>
+            <VanElement
+              key={van.imageUrl}
+              title={van.name}
+              img={van.imageUrl}
+              price={van.price}
+            />
+          </LinkedStyle>
         ))}
       </VanElementContainer>
     </Container>
