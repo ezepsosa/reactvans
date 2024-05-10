@@ -35,12 +35,12 @@ export const NavbarLink = styled(NavLink)`
   font-weight: 600;
   text-decoration: none;
   color: #4d4d4d;
-  font-size: 1rem;
-  margin-right: 1rem;
+  font-size: 1.25rem;
+  margin-right: 1.25rem;
   &:hover {
     color: black;
   }
-  @media (min-width: 756px) {
-    font-size: 1.25rem;
+  @media (max-width: 756px) {
+    font-size: 1rem;
   }
 `;

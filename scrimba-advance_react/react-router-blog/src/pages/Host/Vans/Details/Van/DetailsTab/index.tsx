@@ -4,7 +4,6 @@ import { Container } from "./styles";
 
 export function DetailsTabHostVan() {
   const { van } = useVan();
-  //TODO: Check why navbar goes center when having more text. (Try to keep only the first Text component and save to check behaviour)
   return (
     <Container>
       <Text fontWeight={500} fontSize="0.9rem" color="#161616">

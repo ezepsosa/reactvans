@@ -41,6 +41,7 @@ export default function VanInfo({ van }: { van: Van }) {
             }
             mediaheight="1.5rem"
             mediawidth="4.3rem"
+            fontSize="1rem"
             backgroundcolor={backgroundcolor}
             hoverbackgroundcolor={hoverbackgroundcolor}
             color="#FFEAD0"
@@ -54,7 +55,10 @@ export default function VanInfo({ van }: { van: Van }) {
         </ContainerInfo>
       </VanHead>
       <VanBody>
-        <Navbar buttons={["Details", "Pricing", "Photos"]} />
+        <Navbar
+          largescreen={false}
+          buttons={["Details", "Pricing", "Photos"]}
+        />
         <Outlet context={{ van } satisfies ContextType} />
       </VanBody>
     </ContainerVan>

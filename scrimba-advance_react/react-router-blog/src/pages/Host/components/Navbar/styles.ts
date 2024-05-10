@@ -1,5 +1,13 @@
 import { NavLink } from "react-router-dom";
 import styled, { css } from "styled-components";
+import { NavbarContainerProps } from "./types";
+
+const largescreenStyles = css`
+  @media (max-width: 992px) {
+    flex-direction: column;
+    margin: 0;
+  }
+`;
 
 export const StyledContainer = css`
   display: flex;
@@ -13,14 +21,12 @@ export const FilterContainer = styled.div`
   }
 `;
 
-export const Container = styled.div`
+export const Container = styled.div<NavbarContainerProps>`
   ${StyledContainer}
   justify-content: space-between;
   margin-left: 2rem;
-  @media (max-width: 992px) {
-    flex-direction: column;
-    margin: 0;
-  }
+
+  ${(props) => props.largescreen && largescreenStyles}
 `;
 
 export const StyledNavLink = styled(NavLink)`

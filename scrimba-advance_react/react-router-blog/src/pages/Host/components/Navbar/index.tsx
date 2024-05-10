@@ -1,9 +1,9 @@
 import { Container, FilterContainer, StyledNavLink } from "./styles";
 import { Props } from "./types";
 
-export function Navbar({ buttons }: Props) {
+export function Navbar({ buttons, largescreen = false }: Props) {
   return (
-    <Container>
+    <Container largescreen={largescreen.toString()}>
       <FilterContainer>
         {buttons.map((element) =>
           buttons.indexOf(element) == 0 ? (

@@ -41,11 +41,16 @@ export const VanBody = styled.div`
 `;
 
 export const Img = styled.img`
-  width: 10rem;
-  height: 10rem;
+  width: 25rem;
+  height: 25rem;
+  margin: 1.5rem;
   object-fit: cover;
   border-radius: 0.5rem;
-  margin: 0.7rem;
+  @media (max-width: 768px) {
+    width: 10rem;
+    height: 10rem;
+    margin: 0.7rem;
+  }
 `;
 export const ContainerInfo = styled.div`
   display: flex;
