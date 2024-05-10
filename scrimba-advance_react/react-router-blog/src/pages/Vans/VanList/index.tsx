@@ -4,19 +4,26 @@ import { Headline } from "../../../components/General/styles";
 import { Container, VansContainer } from "./style";
 import { VanCard } from "./VanCard/index";
 import { Van } from "../../../server/types";
+import { useSearchParams } from "react-router-dom";
+//import { useSearchParams } from "react-router-dom";
 
 export default function VansList() {
   const [vans, setVans] = useState<Van[]>([]);
+  const [searchParams, setSearchParams] = useSearchParams();
   useEffect(() => {
-    fetch("/api/vans")
+    const typeSearch = searchParams.get("type");
+    console.log(typeSearch);
+    fetch(`/api/vans?type=${typeSearch ? typeSearch : ""}`)
       .then((res) => res.json())
-      .then((res) => setVans(res.vans)); // Parsea la respuesta como JSON
-  }, []);
-
+      .then((res) => setVans(res.vans));
+  }, [searchParams]);
   return (
     <Container>
       <Headline>Explore our van options</Headline>
-      <Filter filters={["Simple", "Luxury", "Rugged"]} />
+      <Filter
+        setSearchParams={setSearchParams}
+        filters={["Simple", "Luxury", "Rugged"]}
+      />
       <VansContainer>
         {vans.map((van) => (
           <VanCard

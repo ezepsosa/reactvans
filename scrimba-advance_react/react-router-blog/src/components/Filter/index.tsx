@@ -2,7 +2,7 @@ import { Button } from "../Button";
 import { Container, FilterContainer } from "./styles";
 import { Props } from "./types";
 
-export const Filter = ({ filters }: Props): JSX.Element => (
+export const Filter = ({ filters, setSearchParams }: Props): JSX.Element => (
   <Container>
     <FilterContainer>
       {" "}
@@ -15,6 +15,7 @@ export const Filter = ({ filters }: Props): JSX.Element => (
           key={element}
           mediaheight="4rem"
           mediawidth="7rem"
+          onClick={() => setSearchParams(`?type=${element}`.toLowerCase())}
         ></Button>
       ))}
     </FilterContainer>
@@ -25,6 +26,7 @@ export const Filter = ({ filters }: Props): JSX.Element => (
       color="black"
       textDecoration="underline"
       hovercolor="#404040"
+      onClick={() => setSearchParams("")}
     ></Button>
   </Container>
 );

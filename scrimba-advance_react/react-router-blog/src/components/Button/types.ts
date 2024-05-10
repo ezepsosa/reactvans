@@ -17,6 +17,7 @@ export type Props = {
   fontweight?: string;
   mediafontweight?: string;
   mediafontSize?: string;
+  onClick?: () => void;
 };
 
 export type ButtonProps = {

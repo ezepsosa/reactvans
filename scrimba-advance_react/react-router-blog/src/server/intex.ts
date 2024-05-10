@@ -90,10 +90,10 @@ export function MockServer({ environment = "development" }): Server {
     },
     routes() {
       this.urlPrefix = "/api";
-      this.get("/vans", (schema) => {
-        return schema.all("van");
+      this.get("/vans", (schema, request) => {
+        const type = request.queryParams.type as string;
+        return type ? schema.where("van", { type: type }) : schema.all("van");
       });
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       this.get("/vans/:id", (schema, request) => {
         const id = request.params.id;
         return schema.find("van", id);
