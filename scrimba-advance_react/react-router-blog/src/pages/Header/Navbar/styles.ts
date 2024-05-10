@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const NavbarContainer = styled.nav`
-  padding: 1rem;
+  margin: 0.7rem;
 `;
 
 export const GroupContainer = styled.ul`
@@ -35,9 +35,12 @@ export const NavbarLink = styled(NavLink)`
   font-weight: 600;
   text-decoration: none;
   color: #4d4d4d;
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-right: 1rem;
   &:hover {
     color: black;
+  }
+  @media (min-width: 756px) {
+    font-size: 1.25rem;
   }
 `;
