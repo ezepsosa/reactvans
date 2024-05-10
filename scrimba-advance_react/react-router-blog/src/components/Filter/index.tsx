@@ -1,3 +1,4 @@
+import { useSearchParams } from "react-router-dom";
 import { Button } from "../Button";
 import { Container, FilterContainer } from "./styles";
 import { Props } from "./types";
@@ -19,14 +20,16 @@ export const Filter = ({ filters, setSearchParams }: Props): JSX.Element => (
         ></Button>
       ))}
     </FilterContainer>
-    <Button
-      backgroundcolor="transparent"
-      text="Clear filters"
-      hoverbackgroundcolor="transparent"
-      color="black"
-      textDecoration="underline"
-      hovercolor="#404040"
-      onClick={() => setSearchParams("")}
-    ></Button>
+    {useSearchParams()[0].size != 0 ? (
+      <Button
+        backgroundcolor="transparent"
+        text="Clear filters"
+        hoverbackgroundcolor="transparent"
+        color="black"
+        textDecoration="underline"
+        hovercolor="#161616"
+        onClick={() => setSearchParams("")}
+      ></Button>
+    ) : null}
   </Container>
 );
