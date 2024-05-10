@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const VansContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(450px, 100%), 1fr));
   grid-auto-rows: auto;
   gap: 2.5rem;
   padding: 1rem;

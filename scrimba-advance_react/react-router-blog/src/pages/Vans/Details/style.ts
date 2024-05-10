@@ -15,6 +15,7 @@ export const Img = styled.img`
   height: 100%;
   object-fit: cover;
   border-radius: 1rem;
+  max-height: 50rem;
 `;
 
 export const ImgContainer = styled.div`
