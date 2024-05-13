@@ -13,12 +13,14 @@ import HostVansDetails from "../pages/Host/Vans/Details";
 import { PricingTabHostVan } from "../pages/Host/Vans/Details/Van/PricingTab";
 import { DetailsTabHostVan } from "../pages/Host/Vans/Details/Van/DetailsTab";
 import { PhotosTabHostVan } from "../pages/Host/Vans/Details/Van/PhotosTab";
+import { NotFoundPage } from "../pages/404";
 
 export function RoutesComponent() {
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
+          <Route path="*" element={<NotFoundPage />} />
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="vans">
