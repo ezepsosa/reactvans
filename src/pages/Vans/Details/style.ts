@@ -10,6 +10,10 @@ export const Container = styled.div`
   }
 `;
 
+export const ContainerInfo = styled.div`
+  }
+`;
+
 export const Img = styled.img`
   width: 100%;
   height: 100%;
@@ -22,6 +26,13 @@ export const ImgContainer = styled.div`
   margin: 1rem;
   width: 90%;
   height: 50%;
+`;
+
+export const ContainerText = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  text-decoration: underline;
 `;
 
 export const DescriptionContainer = styled.div`

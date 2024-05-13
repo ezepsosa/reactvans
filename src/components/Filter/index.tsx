@@ -20,6 +20,7 @@ export const Filter = ({ filters, setSearchParams }: Props): JSX.Element => (
         ></Button>
       ))}
     </FilterContainer>
+
     {useSearchParams()[0].size != 0 ? (
       <Button
         backgroundcolor="transparent"
