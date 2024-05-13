@@ -13,14 +13,17 @@ import {
 import { Button } from "../../../components/Button/index";
 import { Headline, Span, Text } from "../../../components/General/styles";
 import { FaArrowLeft } from "react-icons/fa";
+import { getVansDetails } from "../../../components/api";
 
 export default function VansDetail() {
   const param = useParams();
   const [van, setVan] = useState<Van>();
   useEffect(() => {
-    fetch(`/api/vans/${param.id}`)
-      .then((res) => res.json())
-      .then((res) => setVan(res.van)); // Parsea la respuesta como JSON
+    async function loadVans() {
+      const data = await getVansDetails(param.id ? param.id : "");
+      setVan(data);
+    }
+    loadVans();
   }, [param.id]);
   const backgroundcolor =
     van?.type == "simple"

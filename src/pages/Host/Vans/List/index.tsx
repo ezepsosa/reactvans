@@ -4,13 +4,16 @@ import { VanElement } from "./VanElement/index";
 import { useEffect, useState } from "react";
 import { Van } from "../../../../server/types";
 import { LinkedStyle } from "./VanElement/style";
+import { getHostVans } from "../../../../components/api";
 
 export default function HostVansList() {
   const [vans, setVans] = useState<Van[]>();
   useEffect(() => {
-    fetch("/api/host/vans")
-      .then((res) => res.json())
-      .then((json) => setVans(json.vans));
+    async function loadVans() {
+      const data = await getHostVans();
+      setVans(data);
+    }
+    loadVans();
   }, []);
   return (
     <Container>

@@ -5,14 +5,17 @@ import { FaArrowLeft } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { Container, ContainerText } from "./styles";
 import VanInfo from "./Van";
+import { getHostVansDetails } from "../../../../components/api";
 
 export default function HostVansDetails() {
-  const { id } = useParams();
+  const { id } = useParams<string>();
   const [van, setVan] = useState<Van>();
   useEffect(() => {
-    fetch(`/api/host/vans/${id}`)
-      .then((res) => res.json())
-      .then((json) => setVan(json.vans[0]));
+    async function loadVans() {
+      const data = await getHostVansDetails(id ? id : "");
+      setVan(data);
+    }
+    loadVans();
   }, [id]);
 
   return (

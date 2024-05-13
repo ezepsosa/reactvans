@@ -5,6 +5,7 @@ import { Container, VansContainer } from "./style";
 import { VanCard } from "./VanCard/index";
 import { Van } from "../../../server/types";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { getVans } from "../../../components/api";
 
 export default function VansList() {
   const previousfilter = useLocation().state;
@@ -14,9 +15,11 @@ export default function VansList() {
   );
   useEffect(() => {
     const typeSearch = searchParams.get("type");
-    fetch(`/api/vans?type=${typeSearch ? typeSearch : ""}`)
-      .then((res) => res.json())
-      .then((res) => setVans(res.vans));
+    async function loadVans() {
+      const data = await getVans(typeSearch ? typeSearch : "");
+      setVans(data);
+    }
+    loadVans();
   }, [searchParams]);
 
   return (
