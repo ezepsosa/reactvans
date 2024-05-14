@@ -39,7 +39,6 @@ export default function VansDetail() {
       ? "#424242"
       : "#10756f";
   const previousstate = useLocation().state;
-  console.log(previousstate);
   return (
     <ContainerInfo>
       <Link
