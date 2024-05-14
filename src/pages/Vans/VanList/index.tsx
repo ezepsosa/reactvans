@@ -48,7 +48,7 @@ export default function VansList() {
         setSearchParams={setSearchParams}
         filters={["Simple", "Luxury", "Rugged"]}
       />
-      {!loading ? (
+      {!loading && (
         <VansContainer>
           {vans.map((van) => (
             <Link
@@ -68,7 +68,7 @@ export default function VansList() {
             </Link>
           ))}
         </VansContainer>
-      ) : null}
+      )}
     </Container>
   );
 }
