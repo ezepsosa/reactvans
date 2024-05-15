@@ -1,11 +1,27 @@
-import { createServer, Model, Factory, Server } from "miragejs";
-import { Van } from "./types";
+import { createServer, Model, Factory, Server, Response } from "miragejs";
+import { Session, User, Van } from "./types";
+
+function tokenGenerator() {
+  const length = 150;
+  const chars =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let token = "";
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * chars.length);
+    token += chars.charAt(randomIndex);
+  }
+
+  return token;
+}
 
 export function MockServer({ environment = "development" }): Server {
   const server = createServer({
     environment,
     models: {
       van: Model,
+      user: Model,
+      session: Model,
     },
     factories: {
       van: Factory.extend<Van>({
@@ -18,6 +34,17 @@ export function MockServer({ environment = "development" }): Server {
           "https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png",
         type: "simple",
         hostId: 123,
+      }),
+      user: Factory.extend<User>({
+        id: "1",
+        name: "Ezequiel",
+        password: "Asecurepassword123:)",
+        email: "ezequiel.psosa@outlook.com",
+      }),
+
+      session: Factory.extend<Session>({
+        id: "1",
+        sessiontoken: "sdasd23fasf21e298jdnn727621gdnndndnd721e72273hde",
       }),
     },
     seeds(server) {
@@ -87,6 +114,16 @@ export function MockServer({ environment = "development" }): Server {
         type: "rugged",
         hostId: 789,
       });
+      server.create("user", {
+        id: "2",
+        email: "john@doe.com",
+        password: "Jd123",
+        name: "John Doe",
+      });
+      server.create("session", {
+        id: "2",
+        sessiontoken: "sdasd23fasf21e298jdnn727621gdnndndnd721e72273hds",
+      });
     },
     routes() {
       this.urlPrefix = "/api";
@@ -106,6 +143,38 @@ export function MockServer({ environment = "development" }): Server {
       this.get("/host/vans/:id", (schema, request) => {
         const id = request.params.id;
         return schema.where("van", { hostId: 123, id: id });
+      });
+
+      this.get("/sessions/:token", (schema, request) => {
+        const token = request.params.token;
+        return schema.where("session", { sessiontoken: token });
+      });
+
+      this.post("/login", (schema, request) => {
+        {
+          const { email, password } = JSON.parse(request.requestBody);
+          const foundUser = schema.findBy("user", {
+            email: email,
+            password: password,
+          });
+          if (!foundUser) {
+            return new Response(
+              401,
+              {},
+              { message: "No user with those credentials found!" }
+            );
+          }
+          foundUser.password = "";
+          const token = tokenGenerator();
+          schema.create("session", {
+            id: schema.all("session").length.toString(),
+            sessiontoken: token,
+          });
+          return {
+            user: foundUser,
+            token: token,
+          };
+        }
       });
     },
   });

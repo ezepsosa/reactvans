@@ -4,6 +4,11 @@ export type ApiProps = {
   status: string;
 };
 
+export type LoginProps = {
+  email: string;
+  password: string;
+};
+
 export async function getVans(typesearch: string) {
   const res = await fetch(`/api/vans?type=${typesearch}`);
 
@@ -55,4 +60,36 @@ export async function getHostVansDetails(id: string) {
   }
   const data = await res.json();
   return data.vans[0];
+}
+
+export async function loginUser(creds: LoginProps) {
+  {
+    const res = await fetch("/api/login", {
+      method: "post",
+      body: JSON.stringify(creds),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      throw {
+        message: data.message,
+        statusText: res.statusText,
+        status: res.status,
+      };
+    }
+
+    return data;
+  }
+}
+
+export async function getSessions(session: string) {
+  const res = await fetch(`/api/sessions/${session}`);
+
+  if (!res.ok) {
+    throw {
+      message: "Failed to fetch vans",
+      statusText: res.statusText,
+      status: res.status,
+    };
+  }
+  return (await res.json()).sessions.length;
 }
