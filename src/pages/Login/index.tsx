@@ -1,8 +1,17 @@
 import { useState, ChangeEvent, FormEvent } from "react";
-import { Container, ContainerText, Form, Input } from "./styles";
+import {
+  Container,
+  ContainerText,
+  Form,
+  Info,
+  InfoContainer,
+  InfoMessage,
+  Input,
+} from "./styles";
 import { Headline, Text } from "../../components/General/styles";
 import { Button } from "../../components/Button";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { loginUser } from "../../components/api";
 
 interface FormData {
   email: string;
@@ -15,10 +24,17 @@ export default function Login() {
     password: "",
   });
   const shouldLogin = useLocation().state;
+  const navigate = useNavigate();
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log(loginFormData);
+    try {
+      const result = await loginUser(loginFormData);
+      localStorage.setItem("usertokenlogged", result.token);
+      navigate("/host");
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
@@ -53,6 +69,10 @@ export default function Login() {
       <ContainerText>
         <Text>Don't have an account?</Text>
         <Text color="#ff8c38">Create one now</Text>
+        <InfoContainer>
+          <Info></Info>
+          <InfoMessage>User: john@doe.com{"\n"}Password: Jd123</InfoMessage>
+        </InfoContainer>
       </ContainerText>
     </Container>
   );
