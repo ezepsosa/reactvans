@@ -12,11 +12,7 @@ import { Headline, Text } from "../../components/General/styles";
 import { Button } from "../../components/Button";
 import { useLocation, useNavigate } from "react-router-dom";
 import { loginUser } from "../../components/api";
-
-interface FormData {
-  email: string;
-  password: string;
-}
+import { FormData } from "./types";
 
 export default function Login() {
   const [loginFormData, setLoginFormData] = useState<FormData>({
@@ -25,15 +21,24 @@ export default function Login() {
   });
   const shouldLogin = useLocation().state;
   const navigate = useNavigate();
+  const [errors, setErrors] = useState<boolean>();
+  const [buttonMessage, setButtonMessage] = useState<string>("Sign in");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    setButtonMessage("Loggin in ...");
     e.preventDefault();
     try {
       const result = await loginUser(loginFormData);
       localStorage.setItem("usertokenlogged", result.token);
-      navigate("/host");
+      setErrors(false);
+      navigate(shouldLogin.location ? shouldLogin.location : "/host", {
+        replace: true,
+      });
     } catch (err) {
+      setErrors(true);
       console.log(err);
+    } finally {
+      setButtonMessage("Sign in");
     }
   }
 
@@ -47,8 +52,13 @@ export default function Login() {
 
   return (
     <Container>
-      {shouldLogin && <Text color="#ff5959">{shouldLogin}</Text>}
+      {shouldLogin.message && (
+        <Text color="#ff5959">{shouldLogin.message}</Text>
+      )}
       <Headline>Sign in to your account</Headline>
+      {errors && (
+        <Text color="#ff3838">No user found with those credentials !</Text>
+      )}
       <Form onSubmit={handleSubmit}>
         <Input
           onChange={handleChange}
@@ -64,7 +74,15 @@ export default function Login() {
           value={loginFormData.password}
           placeholder="Password"
         />
-        <Button text="Sign in" mediaheight="3rem" mediawidth="14rem"></Button>
+        <Button
+          text={buttonMessage}
+          mediaheight="3rem"
+          mediawidth="14rem"
+          backgroundcolor={buttonMessage == "Sign in" ? "#ff8c38" : "#ea6707"}
+          hoverbackgroundcolor={
+            buttonMessage == "Sign in" ? "#ff8c38" : "#ea6707"
+          }
+        ></Button>
       </Form>
       <ContainerText>
         <Text>Don't have an account?</Text>
