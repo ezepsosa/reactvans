@@ -14,6 +14,8 @@ import { PricingTabHostVan } from "../pages/Host/Vans/Details/Van/PricingTab";
 import { DetailsTabHostVan } from "../pages/Host/Vans/Details/Van/DetailsTab";
 import { PhotosTabHostVan } from "../pages/Host/Vans/Details/Van/PhotosTab";
 import { NotFoundPage } from "../pages/404";
+import Login from "../pages/Login";
+import { Logout } from "../pages/Logout";
 
 export function RoutesComponent() {
   return (
@@ -23,6 +25,8 @@ export function RoutesComponent() {
           <Route path="*" element={<NotFoundPage />} />
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="login" element={<Login />} />
+          <Route path="logout" element={<Logout />} />
           <Route path="vans">
             <Route index element={<VansList />} />
             <Route path=":id" element={<VansDetail />} />
