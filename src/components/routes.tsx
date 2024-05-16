@@ -5,9 +5,7 @@ import VansList from "../pages/Vans/VanList";
 import VansDetail from "../pages/Vans/Details";
 import { Layout } from "./layout";
 import { HostLayout } from "../pages/Host/hostlayour";
-import { Income } from "../pages/Host/Income";
 import { Reviews } from "../pages/Host/Reviews";
-import { Dashboard } from "../pages/Host/Dashboard";
 import HostVansList from "../pages/Host/Vans/List";
 import HostVansDetails from "../pages/Host/Vans/Details";
 import { PricingTabHostVan } from "../pages/Host/Vans/Details/Van/PricingTab";
@@ -32,8 +30,6 @@ export function RoutesComponent() {
             <Route path=":id" element={<VansDetail />} />
           </Route>
           <Route path="host" element={<HostLayout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
             <Route path="vans">
               <Route index element={<HostVansList />} />
