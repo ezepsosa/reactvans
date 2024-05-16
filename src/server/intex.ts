@@ -146,7 +146,7 @@ export function MockServer({ environment = "development" }): Server {
         id: "3",
         name: "Antonio",
         date: " April 29, 2024",
-        stars: 5,
+        stars: 4,
         text: "Our caravan adventure was absolutely fantastic! Over the course of two weeks, this caravan became our haven on wheels, offering unparalleled comfort and convenience. Not once did we encounter any issues, allowing us to fully enjoy every moment of our journey. The caravan was spotless and thoughtfully equipped, ensuring we had everything we needed for a memorable trip. The coziness and warmth it provided made our experience even more delightful. If you're looking for an unforgettable caravan experience, I wholeheartedly recommend embarking on a journey like ours.",
         hostId: 123,
       });

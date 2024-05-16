@@ -31,7 +31,7 @@ export default function Login() {
       const result = await loginUser(loginFormData);
       localStorage.setItem("usertokenlogged", result.token);
       setErrors(false);
-      navigate(shouldLogin.location ? shouldLogin.location : "/host", {
+      navigate(shouldLogin?.location ? shouldLogin.location : "/host", {
         replace: true,
       });
     } catch (err) {
@@ -52,7 +52,7 @@ export default function Login() {
 
   return (
     <Container>
-      {shouldLogin.message && (
+      {shouldLogin?.message && (
         <Text color="#ff5959">{shouldLogin.message}</Text>
       )}
       <Headline>Sign in to your account</Headline>

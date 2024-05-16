@@ -25,6 +25,9 @@ export const NavbarLinkLogo = styled(Link)`
   font-size: 2rem;
   text-decoration: none;
   color: #000000;
+  @media (max-width: 756px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const NavbarLink = styled(NavLink)`
