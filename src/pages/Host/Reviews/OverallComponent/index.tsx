@@ -4,7 +4,6 @@ import { FaStar } from "react-icons/fa";
 import { Props } from "./types";
 
 export function OverallComponent({ reviews }: Props) {
-  console.log(reviews);
   return (
     <Container>
       <ContainerTextTogether>
@@ -17,7 +16,12 @@ export function OverallComponent({ reviews }: Props) {
       </ContainerTextTogether>
       <ContainerTextTogether>
         <Text fontWeight={700} color="#161616" fontSize="1.6rem">
-          5.0
+          {(
+            reviews.reduce(
+              (accumulator, element) => accumulator + element.stars,
+              0
+            ) / reviews.length
+          ).toPrecision(2)}
         </Text>
         <FaStar color="FF8C38"></FaStar>
         <Text fontWeight={500} color="#161616">
