@@ -19,3 +19,12 @@ export interface Session {
   id: string;
   sessiontoken: string;
 }
+
+export interface Review {
+  id: string;
+  stars: number;
+  name: string;
+  date: string;
+  text: string;
+  hostId: number;
+}

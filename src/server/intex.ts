@@ -1,5 +1,5 @@
 import { createServer, Model, Factory, Server, Response } from "miragejs";
-import { Session, User, Van } from "./types";
+import { Review, Session, User, Van } from "./types";
 
 function tokenGenerator() {
   const length = 150;
@@ -22,6 +22,7 @@ export function MockServer({ environment = "development" }): Server {
       van: Model,
       user: Model,
       session: Model,
+      review: Model,
     },
     factories: {
       van: Factory.extend<Van>({
@@ -45,6 +46,15 @@ export function MockServer({ environment = "development" }): Server {
       session: Factory.extend<Session>({
         id: "1",
         sessiontoken: "sdasd23fasf21e298jdnn727621gdnndndnd721e72273hde",
+      }),
+
+      review: Factory.extend<Review>({
+        id: "1",
+        stars: 5,
+        name: "Ezequiel",
+        text: "Txample text",
+        date: "2021, 02",
+        hostId: 123,
       }),
     },
     seeds(server) {
@@ -124,6 +134,22 @@ export function MockServer({ environment = "development" }): Server {
         id: "2",
         sessiontoken: "sdasd23fasf21e298jdnn727621gdnndndnd721e72273hds",
       });
+      server.create("review", {
+        id: "2",
+        name: "Andrea",
+        date: "May 08, 2024",
+        stars: 5,
+        text: "Our caravan experience was exceptional. Throughout our two-week journey, this caravan became our rolling home, offering unmatched comfort and reliability. From the get-go, we encountered no issues, allowing us to fully immerse ourselves in the joys of the road. Impeccably clean and well-equipped, it provided everything we needed for a memorable trip. The warmth and hospitality we experienced inside only enhanced our satisfaction. If you're seeking the ultimate caravan experience, I highly recommend embarking on a journey like ours.",
+        hostId: 123,
+      });
+      server.create("review", {
+        id: "3",
+        name: "Antonio",
+        date: " April 29, 2024",
+        stars: 5,
+        text: "Our caravan adventure was absolutely fantastic! Over the course of two weeks, this caravan became our haven on wheels, offering unparalleled comfort and convenience. Not once did we encounter any issues, allowing us to fully enjoy every moment of our journey. The caravan was spotless and thoughtfully equipped, ensuring we had everything we needed for a memorable trip. The coziness and warmth it provided made our experience even more delightful. If you're looking for an unforgettable caravan experience, I wholeheartedly recommend embarking on a journey like ours.",
+        hostId: 123,
+      });
     },
     routes() {
       this.urlPrefix = "/api";
@@ -143,6 +169,9 @@ export function MockServer({ environment = "development" }): Server {
       this.get("/host/vans/:id", (schema, request) => {
         const id = request.params.id;
         return schema.where("van", { hostId: 123, id: id });
+      });
+      this.get("/host/reviews/", (schema) => {
+        return schema.where("review", { hostId: 123 });
       });
 
       this.get("/sessions/:token", (schema, request) => {

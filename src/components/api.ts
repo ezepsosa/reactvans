@@ -62,6 +62,20 @@ export async function getHostVansDetails(id: string) {
   return data.vans[0];
 }
 
+export async function getHostReviews() {
+  const res = await fetch(`/api/host/reviews/`);
+
+  if (!res.ok) {
+    throw {
+      message: "Failed to fetch reviews",
+      statusText: res.statusText,
+      status: res.status,
+    };
+  }
+  const data = await res.json();
+  return data.reviews;
+}
+
 export async function loginUser(creds: LoginProps) {
   {
     const res = await fetch("/api/login", {
@@ -86,7 +100,7 @@ export async function getSessions(session: string) {
 
   if (!res.ok) {
     throw {
-      message: "Failed to fetch vans",
+      message: "Failed to fetch sessions",
       statusText: res.statusText,
       status: res.status,
     };
