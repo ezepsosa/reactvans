@@ -42,6 +42,8 @@ export function HostLayout() {
   return (
     <div>
       <Navbar buttons={["Vans", "Reviews"]} />
+      {location.pathname == "/host" ? <Navigate to={"vans"} /> : null}
+
       <Outlet />
     </div>
   );

@@ -10,7 +10,7 @@ import {
 } from "./styles";
 import { Headline, Text } from "../../components/General/styles";
 import { Button } from "../../components/Button";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { loginUser } from "../../components/api";
 import { FormData } from "./types";
 
@@ -49,7 +49,6 @@ export default function Login() {
       [name]: value,
     }));
   }
-
   return (
     <Container>
       {shouldLogin?.message && (
